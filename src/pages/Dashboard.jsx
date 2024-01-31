@@ -12,7 +12,8 @@ import {
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import * as datefns from "date-fns";
-const Dashboard = (): JSX.Element => {
+import { Link } from "react-router-dom";
+const Dashboard = () => {
   const { scrapData } = useScrap();
 
   const { data, isError, isLoading } = useQuery({
@@ -42,15 +43,21 @@ const Dashboard = (): JSX.Element => {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {data.map((item, index: number) => (
+            {data.map((item, index) => (
               <TableRow key={index}>
                 <TableCell className="font-medium">{index + 1}</TableCell>
                 <TableCell>{item.title}</TableCell>
                 <TableCell>
-                  <Button variant="link">vist</Button>
+                  <Link to={item.url}>
+                    <Button variant="link">vist</Button>
+                  </Link>
                 </TableCell>
                 <TableCell>
-                  <Button variant="link">hacker news</Button>
+                  <Link
+                    to={`https://news.ycombinator.com/${item.hackerNewsUrl}`}
+                  >
+                    <Button variant="link">hacker news</Button>
+                  </Link>
                 </TableCell>
                 <TableCell>{item.upvotes}</TableCell>
                 <TableCell>{item.postedBy}</TableCell>

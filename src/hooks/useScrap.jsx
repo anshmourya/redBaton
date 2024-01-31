@@ -1,4 +1,5 @@
 import axios from "axios";
+
 const useScrap = () => {
   const scrapData = async () => {
     try {
