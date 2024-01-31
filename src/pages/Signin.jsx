@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import { H1 } from "@/components/typograph";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,11 +9,11 @@ import { signInSchema } from "@/constant/validate";
 import { cn } from "@/lib/utils";
 import { useAccount } from "@/hooks/useAccount";
 import { useNavigate } from "react-router-dom";
-// import { toast } from "sonner";
-
+import { User } from "../context/User";
 const Signin = () => {
   const navigate = useNavigate();
   const { createSession } = useAccount();
+  const { refetch } = useContext(User);
   const {
     control,
     handleSubmit,
@@ -28,7 +28,10 @@ const Signin = () => {
 
   const onSubmit = async (data) => {
     // User is not logged in, proceed with creating a session
-    await createSession(data.email, data.password);
+    if (await createSession(data.email, data.password)) {
+      refetch();
+      navigate("/");
+    }
   };
   return (
     <>

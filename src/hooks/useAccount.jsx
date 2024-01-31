@@ -14,7 +14,9 @@ export const useAccount = () => {
 
   const createSession = async (email, password) => {
     try {
-      await account.createEmailSession(email, password);
+      const newLogin = await account.createEmailSession(email, password);
+
+      localStorage.setItem("user", newLogin.userId);
       return true;
     } catch (error) {
       console.error(error);

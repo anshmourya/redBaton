@@ -13,7 +13,10 @@ import {
 import { Button } from "@/components/ui/button";
 import * as datefns from "date-fns";
 import { Link } from "react-router-dom";
+import useUser from "../hooks/useUser";
+
 const Dashboard = () => {
+  const { markDelete } = useUser();
   const { scrapData } = useScrap();
 
   const { data, isError, isLoading } = useQuery({
@@ -26,6 +29,7 @@ const Dashboard = () => {
   if (isError) {
     return <h1>error</h1>;
   }
+
   return (
     <>
       <div className="container">
@@ -40,6 +44,7 @@ const Dashboard = () => {
               <TableHead>Upvotes</TableHead>
               <TableHead>posted By</TableHead>
               <TableHead>posted</TableHead>
+              <TableHead>Mark Deleted</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -65,6 +70,9 @@ const Dashboard = () => {
                   {datefns.formatDistance(item.postedOn, Date.now(), {
                     addSuffix: true,
                   })}
+                </TableCell>
+                <TableCell>
+                  <Button onClick={() => markDelete(item.id)}>delete</Button>
                 </TableCell>
               </TableRow>
             ))}
