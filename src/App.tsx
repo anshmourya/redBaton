@@ -1,7 +1,6 @@
-import React from "react";
 import Dashboard from "@/pages/Dashboard";
 
-const App = () => {
+const App = (): JSX.Element => {
   return (
     <>
       <Dashboard />
