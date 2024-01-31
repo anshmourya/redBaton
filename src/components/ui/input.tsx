@@ -13,7 +13,7 @@ interface InputProps {
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ name, control, className, type = "text", ...props }, ref) => {
+  ({ name, control, className, type = "text", ...props }, _ref) => {
     const { field } = useController({
       name,
       control,
