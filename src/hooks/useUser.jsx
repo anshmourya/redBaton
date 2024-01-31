@@ -42,6 +42,7 @@ const useUser = () => {
     try {
       if (!user) {
         toast.error("please login first");
+        return false;
       }
       toast.success("Deleteing the post");
       await databases.updateDocument(databaseId, userCollection, user, {

@@ -4,7 +4,6 @@ import { useQuery } from "@tanstack/react-query";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -34,7 +33,6 @@ const Dashboard = () => {
     <>
       <div className="container">
         <Table>
-          <TableCaption>A list of your recent invoices.</TableCaption>
           <TableHeader>
             <TableRow>
               <TableHead>Sr no</TableHead>
