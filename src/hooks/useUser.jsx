@@ -33,7 +33,19 @@ const useUser = () => {
       throw new Error("Couldn't get user details from database.");
     }
   };
-  return { addUser, getUerDetail };
+
+  const markDelete = async (userId, data) => {
+    try {
+      await databases.updateDocument(databaseId, userCollection, userId, [
+        data,
+      ]);
+      return true;
+    } catch (error) {
+      console.error(error);
+      throw new Error("Couldn't mark delete something went wrong.");
+    }
+  };
+  return { addUser, getUerDetail, markDelete };
 };
 
 export default useUser;
