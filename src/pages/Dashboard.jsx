@@ -13,6 +13,8 @@ import { Button } from "@/components/ui/button";
 import * as datefns from "date-fns";
 import { Link } from "react-router-dom";
 import useUser from "../hooks/useUser";
+import PageLoader from "@/components/loader/PageLoader";
+import Navbar from "../components/navbar";
 
 const Dashboard = () => {
   const { markDelete } = useUser();
@@ -23,15 +25,16 @@ const Dashboard = () => {
     queryFn: scrapData,
   });
   if (isLoading) {
-    return <h1>loding</h1>;
+    return <PageLoader />;
   }
   if (isError) {
-    return <h1>error</h1>;
+    return <h1>something went wrong..</h1>;
   }
 
   return (
     <>
-      <div className="container">
+      <Navbar />
+      <div className="container my-6">
         <Table>
           <TableHeader>
             <TableRow>
