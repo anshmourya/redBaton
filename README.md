@@ -1,30 +1,34 @@
-# React + TypeScript + Vite
+<h1 align="center">redBaton</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 🧐 About <a name = "about"></a>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This porject fills all the requrinment of task. such
 
-## Expanding the ESLint configuration
+- user can login and signup
+- user cannot signup with the same email
+- proper error handling for signin and signup
+- user cannot mark <b>deleted</b> without signin
+- getting all the latest 3 page scrap data.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🏁 Getting Started <a name = "getting_started"></a>
 
-- Configure the top-level `parserOptions` property like this:
+### See [Deployment](https://red-baton.vercel.app/)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+the project is already deployed so you don't have to setup the project locally you can just check the for the <b>for the best practices purpose.</b>
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## ⛏️ Built Using <a name = "built_using"></a>
+
+- React js
+- Express
+- Appwrite (backend as service provider)
+- react-query (for optimzed api call)
+- pupperter (for scraping the data)
+- react-hook-form (for secure form validation)
+
+## ✍️ Authors <a name = "authors"></a>
+
+- [@anshmourya](https://twitter.com/Ansh__Mourya) - twitter
+- [@anshmourya](https://www.linkedin.com/in/ansh-mourya-8504b122a/) - linkden
+- [@anshmourya](https://bento.me/anshmourya) - portfolio
