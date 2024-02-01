@@ -60,7 +60,9 @@ const useUser = () => {
       return true;
     } catch (error) {
       console.error(error);
-      toast.error("please login first");
+      toast.error(
+        "you might not be logged in, or please refresh the page once."
+      );
       throw new Error("Couldn't mark delete something went wrong.");
     }
   };
